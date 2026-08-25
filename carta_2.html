@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para una persona especial ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: white;
+}
+
+/* VIDEO DE FONDO */
+#videoFondo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+/* OSCURECER EL VIDEO */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -2;
+}
+
+/* CONTENIDO */
+.contenido {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.carta {
+    width: min(900px, 95%);
+    padding: 55px;
+    margin: 20px auto;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 0 40px rgba(255, 100, 170, 0.4);
+
+    animation: aparecer 3s ease;
+}
+
+.corazon {
+    font-size: 70px;
+    animation: latido 1.5s infinite;
+}
+
+h1 {
+    margin: 15px 0 25px;
+
+    font-size: clamp(35px, 7vw, 70px);
+
+    text-shadow:
+        0 0 10px white,
+        0 0 25px pink,
+        0 0 40px hotpink;
+}
+
+.mensaje {
+    font-size: clamp(18px, 2.2vw, 23px);
+    line-height: 2;
+    text-align: left;
+}
+
+.firma {
+    margin-top: 30px;
+    font-size: 22px;
+    font-style: italic;
+}
+
+/* PÉTALOS */
+.petalo {
+    position: fixed;
+    top: -60px;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    animation: caer linear forwards;
+}
+
+@keyframes caer {
+
+    0% {
+        transform:
+            translateY(-60px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(120px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-120px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* APARECER CARTA */
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* CORAZÓN */
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* ==========================
+   BOTÓN CONTINUAR
+========================== */
+
+.boton {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #d6336c, #f06a9b);
+    border: 1px solid rgba(255,255,255,.7);
+    box-shadow: 0 5px 20px rgba(165,31,77,.35);
+    transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 30px rgba(165,31,77,.55);
+    background: linear-gradient(135deg, #f06a9b, #d6336c);
+}
+
+.boton:active {
+    transform: scale(.96);
+}
+
+/* MÓVIL */
+@media (max-width: 600px) {
+
+    .carta {
+        padding: 30px 20px;
+    }
+
+    .corazon {
+        font-size: 50px;
+    }
+
+    .mensaje {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     VIDEO DE FONDO
+========================= -->
+
+<video id="videoFondo" autoplay muted loop playsinline>
+    <source src="2026-08-24 13-35-48.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+
+<!-- =========================
+     MÚSICA
+========================= -->
+
+<audio id="musica" loop>
+    <source src="Honkai Impact 3rd _ New Bridge Soundtrack 「Train to the Future」 [JWz1fkLZHpo].mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =========================
+     MENSAJE
+========================= -->
+
+<div class="contenido">
+
+    <div class="carta">
+
+        <div class="corazon">
+            ❤️
+        </div>
+
+        <h1>
+            Para ti
+        </h1>
+
+        <p class="mensaje">
+
+            Hay algo que llevo tiempo queriendo decirte, y aunque podría intentar resumirlo en unas cuantas palabras, siento que sería injusto con todo lo que significas para mí. Porque hay personas a las que uno puede describir fácilmente: decir que son buenas, amables, bonitas o especiales. Pero contigo siento que esas palabras se quedan demasiado pequeñas. Por eso quiero tomarme este momento para decirte, con calma y desde lo más sincero de mi corazón, todo aquello que quizá muchas veces no sé cómo expresar cuando estoy frente a ti.
+
+Quiero que sepas, antes que cualquier otra cosa, que eres una persona maravillosa.
+
+Y no lo digo simplemente porque seas preciosa, aunque lo eres. No lo digo solamente porque seas linda, aunque lo eres muchísimo. No lo digo solamente porque tengas una sonrisa capaz de alegrarme un día entero, aunque realmente la tienes. Lo digo porque hay algo en ti que va mucho más allá de lo que se puede ver. Hay una forma de ser tuya, una manera de tratar a las personas, una ternura que llevas contigo y una esencia que hace que sea imposible no apreciar tu presencia.
+
+Hay personas que simplemente pasan por nuestra vida, y hay otras que dejan una pequeña huella. Pero tú has dejado algo mucho más grande en mí.
+
+Quizás nunca te has dado cuenta de cuánto me has ayudado. Quizás algunas cosas que hiciste fueron pequeñas para ti, quizás algunas palabras que me dijiste no parecían tener tanta importancia, quizás algunos momentos que compartimos para ti fueron simplemente momentos normales. Pero para mí significaron muchísimo.
+
+Me has ayudado de maneras directas, cuando estuviste ahí, cuando me escuchaste, cuando me diste apoyo, cuando hiciste algo por mí o cuando simplemente decidiste acompañarme. Pero también me has ayudado de una forma que probablemente ni siquiera imaginas: simplemente siendo tú.
+
+A veces una persona puede ayudar a otra sin darse cuenta.
+
+Una sonrisa puede llegar en el momento indicado.
+
+Una conversación puede cambiar un día.
+
+Una palabra puede hacer que alguien vuelva a creer en sí mismo.
+
+Una compañía puede hacer que un momento difícil se sienta un poco menos pesado.
+
+Y tú has hecho muchas de esas cosas conmigo.
+
+Tal vez nunca llegaste a pensar que algo que dijiste iba a quedarse en mi mente durante tanto tiempo. Tal vez nunca imaginaste que una sonrisa tuya podía cambiar completamente mi estado de ánimo. Tal vez nunca pensaste que simplemente estar ahí podía significar tanto.
+
+Pero quiero que lo sepas.
+
+Has sido importante para mí.
+
+Mucho más de lo que probablemente imaginas.
+
+Y por eso quiero agradecerte.
+
+Gracias por ser tú.
+
+Gracias por tu forma de ser.
+
+Gracias por tu ternura.
+
+Gracias por cada sonrisa.
+
+Gracias por cada conversación.
+
+Gracias por cada pequeño detalle.
+
+Gracias por cada momento en el que, consciente o inconscientemente, hiciste que mi vida se sintiera un poquito más bonita.
+
+Y hablando de tu sonrisa... no sé si alguna vez te he dicho realmente lo que provoca en mí.
+
+Tu sonrisa es preciosa.
+
+Pero no solamente porque sea bonita de mirar. Es preciosa porque cuando sonríes siento que cambia todo alrededor. Es como si durante un instante los problemas pudieran quedarse lejos y solamente existiera ese momento.
+
+Hay sonrisas bonitas.
+
+Y después está la tuya.
+
+Una de esas sonrisas que uno recuerda incluso después de que el momento termina.
+
+Una de esas sonrisas que aparecen en la memoria sin que uno las esté buscando.
+
+Una de esas sonrisas que pueden hacer que una persona se quede pensando en ella durante mucho tiempo.
+
+Y sí, me encanta verte sonreír.
+
+Me encanta cuando estás feliz.
+
+Me encanta cuando algo te emociona.
+
+Me encanta cuando hablas de algo que te gusta.
+
+Me encanta cuando haces esas pequeñas cosas que quizá para ti no tienen importancia, pero que para mí hacen que seas tú.
+
+Porque justamente eso es lo que más me gusta de ti.
+
+No quiero solamente los momentos perfectos.
+
+No quiero solamente las fotografías bonitas.
+
+No quiero solamente los días en los que todo está bien.
+
+Me gusta conocerte tal como eres.
+
+Con tus emociones.
+
+Con tus sueños.
+
+Con tus pensamientos.
+
+Con tus pequeñas locuras.
+
+Con tus momentos de alegría.
+
+Con tus momentos difíciles.
+
+Con tus silencios.
+
+Con tus risas.
+
+Con todo aquello que te hace ser la persona que eres.
+
+Y hay otra cosa que admiro muchísimo de ti.
+
+Tus manos.
+
+Puede sonar extraño decirlo así, pero realmente admiro lo que eres capaz de hacer con ellas.
+
+Tienes algo especial cuando creas.
+
+Cuando haces arte con tus manos, siento que estás dejando una pequeña parte de ti en aquello que haces. No solamente estás creando algo bonito; estás poniendo imaginación, paciencia, sensibilidad y una parte de tu esencia.
+
+Y eso me parece increíble.
+
+Me encanta saber que tienes esa capacidad de transformar algo que quizá al principio es simplemente una idea, un material, una hoja, un objeto o cualquier cosa, y convertirlo en algo que tiene vida.
+
+Eso dice mucho de ti.
+
+Dice que tienes creatividad.
+
+Dice que tienes paciencia.
+
+Dice que tienes sensibilidad.
+
+Dice que eres capaz de ver belleza donde otras personas quizá no la ven.
+
+Y eso también me parece precioso.
+
+Porque tú no solamente eres hermosa por fuera.
+
+Tienes una belleza que también se encuentra en lo que haces.
+
+En lo que piensas.
+
+En cómo sientes.
+
+En cómo tratas a los demás.
+
+En la forma en la que puedes alegrar un espacio simplemente estando presente.
+
+Hay algo en ti que me llena de alegría.
+
+Y no sé exactamente cómo explicarlo.
+
+Es una sensación.
+
+Una de esas cosas que no se pueden convertir fácilmente en una definición.
+
+Simplemente sé que cuando apareces, algo dentro de mí cambia.
+
+Cuando hablo contigo, sonrío.
+
+Cuando pienso en ti, sonrío.
+
+Cuando recuerdo algún momento contigo, sonrío.
+
+Y cuando veo esa sonrisa tuya, probablemente sonrío todavía más.
+
+Es curioso cómo una sola persona puede tener tanto efecto sobre alguien.
+
+Y tú lo tienes sobre mí.
+
+Me haces feliz.
+
+No porque dependa de ti para estar bien, sino porque tu existencia se convirtió en una de esas cosas bonitas que me gusta tener en mi vida.
+
+Eres como uno de esos pequeños regalos que la vida coloca frente a nosotros sin avisarnos cuánto vamos a llegar a apreciarlos.
+
+Y yo te aprecio muchísimo.
+
+Quizás más de lo que sé expresar.
+
+Quizás más de lo que alguna vez he logrado demostrar.
+
+Pero quiero intentar hacerlo ahora.
+
+Quiero que sepas que te quiero muchísimo.
+
+Y cuando digo muchísimo, no lo digo de una manera casual.
+
+Lo digo porque realmente ocupas un lugar muy especial dentro de mí.
+
+Te quiero por quien eres.
+
+Te quiero por tu manera de ser.
+
+Te quiero por tu ternura.
+
+Te quiero por tu sonrisa.
+
+Te quiero por tus detalles.
+
+Te quiero por tus ocurrencias.
+
+Te quiero por tus manos llenas de creatividad.
+
+Te quiero por la alegría que transmites.
+
+Te quiero por todo aquello que eres incluso cuando no estás intentando ser especial.
+
+Y también quiero decirte algo que quizá es todavía más difícil de expresar.
+
+Te amo.
+
+Sí.
+
+Te amo.
+
+Y no quiero que estas palabras suenen simplemente bonitas.
+
+Quiero que entiendas lo que significan para mí.
+
+Decirte que te amo significa que te has convertido en alguien que me importa profundamente.
+
+Significa que deseo verte feliz.
+
+Significa que me importa cómo estás.
+
+Significa que quiero verte cumplir tus sueños.
+
+Significa que quiero celebrar tus triunfos.
+
+Significa que quiero estar presente cuando las cosas sean difíciles.
+
+Significa que quiero seguir conociendo todas esas partes de ti que todavía no conozco.
+
+Significa que quiero seguir descubriendo tus gustos, tus sueños, tus ideas, tus pequeñas costumbres y todas esas cosas que te hacen única.
+
+Amarte no significa pensar que eres perfecta.
+
+Significa quererte incluso sabiendo que eres humana, que tienes días buenos y días malos, que puedes equivocarte, cansarte, sentirte triste o simplemente no tener ganas de nada.
+
+Y aun así pensar:
+
+"Qué maravillosa persona."
+
+Porque eso eres para mí.
+
+Maravillosa.
+
+Preciosa.
+
+Linda.
+
+Tierna.
+
+Especial.
+
+Única.
+
+Y podría seguir escribiendo palabras durante horas y probablemente todavía sentiría que me faltan algunas.
+
+Hay tantas cosas que me gustan de ti que a veces ni siquiera sé por dónde empezar.
+
+Me gusta tu sonrisa.
+
+Me gusta tu mirada.
+
+Me gusta tu manera de expresarte.
+
+Me gusta tu forma de crear.
+
+Me gusta cómo puedes ser tierna.
+
+Me gusta cómo puedes hacerme reír.
+
+Me gusta cómo puedes alegrarme sin siquiera intentarlo.
+
+Me gusta la persona que eres.
+
+Y sobre todo, me gusta que seas tú.
+
+Porque no quiero una versión diferente de ti.
+
+No quiero que tengas que cambiar para ser más bonita.
+
+No quiero que tengas que actuar de una determinada manera para ser especial.
+
+No quiero que tengas que demostrarme nada.
+
+Para mí ya eres suficiente siendo tú.
+
+Y ojalá pudieras verte alguna vez desde mis ojos.
+
+Ojalá pudieras observarte durante un momento como yo te observo.
+
+Quizás entonces entenderías por qué me pareces tan maravillosa.
+
+Quizás entenderías por qué tu sonrisa significa tanto.
+
+Quizás entenderías por qué me gusta escucharte.
+
+Quizás entenderías por qué tus pequeñas acciones pueden quedarse conmigo.
+
+Porque muchas veces no nos damos cuenta de nuestro propio valor.
+
+A veces somos capaces de ver la belleza en los demás, pero somos demasiado duros con nosotros mismos.
+
+Y si alguna vez tú llegas a sentir que no eres suficiente, quiero que recuerdes esto:
+
+Para mí eres alguien extraordinario.
+
+Si alguna vez dudas de tu belleza, recuerda que hay alguien que piensa que eres preciosa.
+
+Si alguna vez dudas de tus capacidades, recuerda que hay alguien que admira todo lo que eres capaz de crear.
+
+Si alguna vez sientes que no has hecho suficiente, recuerda que incluso sin darte cuenta has ayudado muchísimo a una persona.
+
+A mí.
+
+Y eso no es algo pequeño.
+
+Has dejado una marca en mi vida.
+
+Una bonita.
+
+Una que agradezco.
+
+Una que no quiero borrar.
+
+Porque si pudiera volver atrás y cambiar algunas cosas de mi vida, hay personas y momentos que probablemente elegiría conservar exactamente como fueron.
+
+Y tú serías una de esas cosas.
+
+Conocerte es algo que agradezco.
+
+Haber podido compartir momentos contigo es algo que agradezco.
+
+Haber recibido tu ayuda es algo que agradezco.
+
+Haber podido verte sonreír es algo que agradezco.
+
+Y simplemente poder decir que existes en mi vida ya es algo que me hace feliz.
+
+Quiero que sepas también que no espero que este mensaje pueda explicar absolutamente todo lo que siento.
+
+Hay sentimientos que son demasiado grandes para convertirse en palabras.
+
+A veces uno puede escribir cien páginas y todavía sentir que no dijo ni la mitad.
+
+Pero al menos quiero intentarlo.
+
+Quiero dejar aquí una pequeña parte de todo lo que llevo dentro.
+
+Porque quizás algún día leas esto cuando estés teniendo un día difícil.
+
+Quizás algún día necesites recordar que eres importante.
+
+Quizás algún día simplemente quieras leer algo bonito.
+
+Y quiero que cuando lo hagas recuerdes que hubo alguien que se tomó el tiempo de escribir todo esto porque realmente te quería.
+
+Porque realmente te ama.
+
+Porque realmente te admira.
+
+Y porque realmente desea que seas feliz.
+
+No sé qué nos traerá el futuro.
+
+No sé cuántos momentos todavía nos quedan por compartir.
+
+No sé qué caminos tomará la vida.
+
+Pero sí sé algo.
+
+Mientras tenga la oportunidad de estar presente en tu vida, quiero valorar cada momento.
+
+Quiero apreciar las conversaciones.
+
+Las risas.
+
+Los pequeños detalles.
+
+Las tonterías.
+
+Los momentos serios.
+
+Los momentos inesperados.
+
+Quiero recordar esas pequeñas cosas que quizá algún día parezcan insignificantes, pero que con el tiempo pueden convertirse en los recuerdos más importantes.
+
+Porque al final, creo que la vida está hecha de eso.
+
+De pequeños momentos.
+
+De pequeñas sonrisas.
+
+De pequeñas conversaciones.
+
+De personas que llegan y hacen que nuestro mundo cambie un poquito.
+
+Y tú cambiaste el mío.
+
+Lo hiciste sin necesidad de grandes gestos.
+
+Simplemente siendo tú.
+
+Y por eso quiero decirte algo más.
+
+Nunca dejes de crear.
+
+Nunca dejes de hacer arte con tus manos.
+
+Nunca dejes de sonreír.
+
+Nunca dejes que alguien te haga pensar que tu ternura es una debilidad.
+
+Nunca pienses que ser sensible te hace menos fuerte.
+
+Nunca pienses que tus sueños son demasiado grandes.
+
+Nunca olvides que tienes una capacidad enorme para hacer cosas hermosas.
+
+Y nunca olvides que hay alguien que cree en ti.
+
+Yo.
+
+Quiero verte cumplir tus sueños.
+
+Quiero verte conseguir aquello por lo que trabajas.
+
+Quiero verte orgullosa de ti misma.
+
+Quiero verte sonreír por cosas que tú misma hayas conseguido.
+
+Quiero que tengas momentos en los que mires hacia atrás y digas:
+
+"Todo valió la pena."
+
+Y si alguna vez puedo estar ahí para celebrar contigo, será un privilegio.
+
+Y si alguna vez necesitas apoyo, quiero que recuerdes que no tienes que enfrentar absolutamente todo sola.
+
+No prometo tener todas las respuestas.
+
+No prometo poder solucionar todos tus problemas.
+
+Pero sí puedo prometer que, si alguna vez necesitas alguien que te escuche, intentaré estar ahí.
+
+Si necesitas alguien que te recuerde tus capacidades, estaré ahí.
+
+Si necesitas alguien que celebre contigo, estaré ahí.
+
+Y si simplemente necesitas alguien con quien compartir un momento tranquilo, también.
+
+Porque te quiero.
+
+Y cuando uno quiere realmente a alguien, su felicidad comienza a importar de una manera diferente.
+
+Tu sonrisa me importa.
+
+Tu tranquilidad me importa.
+
+Tus sueños me importan.
+
+Tus sentimientos me importan.
+
+Tú me importas.
+
+Muchísimo.
+
+Y quiero que algún día, cuando pienses en mí, puedas recordar que hubo alguien que realmente te valoró.
+
+Alguien que vio tu belleza.
+
+Alguien que admiró tu talento.
+
+Alguien que disfrutó de tu sonrisa.
+
+Alguien que agradeció tu ayuda.
+
+Alguien que se alegraba simplemente de saber de ti.
+
+Alguien que te quiso muchísimo.
+
+Alguien que te amó de verdad.
+
+Y si alguna vez me preguntaras:
+
+"¿Qué es lo que tanto te gusta de mí?"
+
+Probablemente no sabría responderte con una sola cosa.
+
+Te diría que es todo.
+
+Es tu sonrisa.
+
+Es tu ternura.
+
+Es tu forma de ser.
+
+Es tu creatividad.
+
+Es la manera en la que haces arte con tus manos.
+
+Es la alegría que transmites.
+
+Es cómo haces sentir a las personas.
+
+Es la persona que eres cuando nadie está mirando.
+
+Es esa parte de ti que quizá tú misma no notas.
+
+Es todo aquello que te hace ser tú.
+
+Y quizás eso sea lo más bonito de todo.
+
+No me enamoré de una sola característica.
+
+Me fui enamorando de un conjunto de pequeñas cosas.
+
+De momentos.
+
+De detalles.
+
+De conversaciones.
+
+De sonrisas.
+
+De recuerdos.
+
+De la persona que poco a poco fui conociendo.
+
+Y cada una de esas cosas fue construyendo dentro de mí este sentimiento tan grande.
+
+Por eso hoy quiero decirte algo que quizá debería haber dicho muchas veces más:
+
+Gracias.
+
+Gracias por llegar a mi vida.
+
+Gracias por ayudarme.
+
+Gracias por alegrarme.
+
+Gracias por hacerme sonreír.
+
+Gracias por ser tierna.
+
+Gracias por ser maravillosa.
+
+Gracias por ser preciosa.
+
+Gracias por ser tú.
+
+Y sobre todo...
+
+Gracias por existir.
+
+No sé si alguna vez vas a comprender completamente cuánto significas para mí.
+
+Quizás incluso después de leer todo esto todavía te parezca difícil creerlo.
+
+Pero espero que al menos una parte de estas palabras se quede contigo.
+
+Espero que cuando vuelvas a sonreír recuerdes que alguien piensa que esa sonrisa es preciosa.
+
+Espero que cuando hagas arte recuerdes que alguien admira lo que tus manos son capaces de crear.
+
+Espero que cuando tengas un día difícil recuerdes que alguien cree que eres mucho más fuerte de lo que imaginas.
+
+Espero que cuando dudes de ti misma recuerdes que alguien te ve como una persona maravillosa.
+
+Y espero que cuando pienses en cuánto has ayudado a los demás, recuerdes que, incluso sin darte cuenta, ayudaste muchísimo a alguien que te quiere con todo su corazón.
+
+A mí.
+
+Te quiero muchísimo.
+
+Te admiro muchísimo.
+
+Te valoro muchísimo.
+
+Y te amo.
+
+Más de lo que probablemente sé explicar.
+
+Más de lo que puedo escribir.
+
+Más de lo que estas palabras pueden contener.
+
+Pero aun así quería intentarlo.
+
+Porque tú mereces saberlo.
+
+Mereces saber que eres importante.
+
+Mereces saber que eres querida.
+
+Mereces saber que tu sonrisa ilumina.
+
+Mereces saber que tus manos crean cosas hermosas.
+
+Mereces saber que tu ternura es algo precioso.
+
+Mereces saber que tu presencia puede cambiar un día entero.
+
+Mereces saber que alguien se siente afortunado de haberte conocido.
+
+Y ese alguien soy yo.
+
+Así que, si algún día olvidas lo maravillosa que eres, vuelve a estas palabras.
+
+Léelas otra vez.
+
+Y recuerda que fueron escritas pensando en ti.
+
+En tu sonrisa.
+
+En tus ojos.
+
+En tus manos.
+
+En tu ternura.
+
+En tu forma de ser.
+
+En todo aquello que te hace especial.
+
+Porque para mí no eres simplemente una persona más.
+
+Eres alguien que dejó una huella.
+
+Alguien que me ayudó.
+
+Alguien que me hizo sonreír.
+
+Alguien que me llenó de alegría.
+
+Alguien a quien admiro.
+
+Alguien a quien quiero.
+
+Alguien a quien amo.
+
+Y pase lo que pase, siempre voy a agradecer haber tenido la oportunidad de conocerte.
+
+Porque algunas personas llegan a nuestra vida y simplemente pasan.
+
+Pero otras llegan...
+
+y dejan el mundo un poquito más bonito de como lo encontraron.
+
+Tú eres una de esas personas.
+
+Y si algún día dudas de lo especial que eres, quiero que recuerdes algo muy sencillo:
+
+Hay alguien en este mundo que sonríe simplemente porque tú existes.
+
+Ese alguien soy yo.
+
+Y probablemente siempre voy a tener un lugar especial en mi corazón para ti.
+
+❤️
+
+Te quiero muchísimo.
+
+Te amo muchísimo.
+
+Y espero que nunca olvides lo maravillosa, preciosa, linda, tierna y especial que eres
+
+        <div class="firma">
+            Con mucho cariño Darturo✨
+        </div>
+
+        <a href="carta_3.html" class="boton">
+            Continuar ❤️
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================
+   MÚSICA AUTOMÁTICA AL 75%
+========================== */
+
+const musica = document.getElementById("musica");
+
+/* Volumen al 75% */
+musica.volume = 0.75;
+
+
+/* Intentar reproducir automáticamente */
+
+window.addEventListener("load", function() {
+
+    musica.play().catch(function() {
+
+        console.log(
+            "El navegador bloqueó el autoplay. " +
+            "La música comenzará al interactuar con la página."
+        );
+
+    });
+
+});
+
+
+/* ==========================
+   ACTIVAR MÚSICA AL PRIMER CLIC
+   SI EL NAVEGADOR BLOQUEÓ AUTOPLAY
+========================== */
+
+document.addEventListener("click", function() {
+
+    musica.play();
+
+}, { once: true });
+
+
+/* ==========================
+   FLORES Y PÉTALOS
+========================== */
+
+const flores = [
+    "🌸",
+    "🌺",
+    "🌷",
+    "🌹",
+    "🌼",
+    "🌻",
+    "💮",
+    "❀",
+    "✿"
+];
+
+
+function crearPetalo() {
+
+    const petalo =
+        document.createElement("div");
+
+    petalo.className = "petalo";
+
+
+    /* Flor aleatoria */
+
+    petalo.textContent =
+        flores[
+            Math.floor(
+                Math.random() * flores.length
+            )
+        ];
+
+
+    /* Posición aleatoria */
+
+    petalo.style.left =
+        Math.random() * 100 + "vw";
+
+
+    /* Tamaño */
+
+    petalo.style.fontSize =
+        (15 + Math.random() * 30) + "px";
+
+
+    /* Velocidad */
+
+    petalo.style.animationDuration =
+        (5 + Math.random() * 8) + "s";
+
+
+    /* Añadir a la página */
+
+    document.body.appendChild(petalo);
+
+
+    /* Eliminar cuando termina */
+
+    setTimeout(() => {
+
+        petalo.remove();
+
+    }, 14000);
+
+}
+
+
+/* ==========================
+   GENERAR PÉTALOS
+========================== */
+
+setInterval(
+    crearPetalo,
+    300
+);
+
+
+/* ==========================
+   PÉTALOS INICIALES
+========================== */
+
+for (
+    let i = 0;
+    i < 25;
+    i++
+) {
+
+    setTimeout(
+        crearPetalo,
+        i * 200
+    );
+
+}
+
+</script>
+
+</body>
+</html>

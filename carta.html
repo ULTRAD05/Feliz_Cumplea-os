@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para ti ❤️</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   CUERPO
+===================================================== */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+}
+
+
+/* =====================================================
+   VIDEO DE FONDO
+===================================================== */
+
+#video-fondo {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+
+    z-index: -2;
+
+}
+
+
+/* =====================================================
+   CAPA SUAVE SOBRE EL VIDEO
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 240, 245, 0.25);
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   CARTA
+===================================================== */
+
+.carta {
+
+    position: relative;
+
+    width: min(650px, 90vw);
+
+    max-height: 80vh;
+
+    padding: 55px;
+
+    overflow-y: auto;
+
+    background: rgba(255,255,255,.94);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 60px rgba(80,20,40,.22);
+
+    text-align: center;
+
+    z-index: 10;
+
+    animation:
+        aparecer 1.5s ease;
+
+}
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.92);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+h1 {
+
+    color: #a51f4d;
+
+    margin-bottom: 30px;
+
+    font-size: clamp(32px, 5vw, 42px);
+
+    font-weight: normal;
+
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+p {
+
+    color: #555;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =====================================================
+   FIRMA
+===================================================== */
+
+.firma {
+
+    margin-top: 35px;
+
+    color: #a51f4d;
+
+    font-size: 24px;
+
+}
+
+
+/* =====================================================
+   CORAZONES
+===================================================== */
+
+.corazon {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    opacity: 0;
+
+    animation:
+        subirCorazon linear infinite;
+
+}
+
+
+@keyframes subirCorazon {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: .9;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-50vh)
+            rotate(20deg)
+            scale(1);
+
+        opacity: .8;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            rotate(-20deg)
+            scale(.8);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+.corazon:nth-child(1) {
+    left: 5%;
+    animation-duration: 8s;
+}
+
+.corazon:nth-child(2) {
+    left: 18%;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.corazon:nth-child(3) {
+    left: 35%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.corazon:nth-child(4) {
+    left: 55%;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+.corazon:nth-child(5) {
+    left: 72%;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+.corazon:nth-child(6) {
+    left: 90%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+
+/* =====================================================
+   PÉTALOS
+===================================================== */
+
+.petalo {
+
+    position: fixed;
+
+    top: -30px;
+
+    width: 14px;
+    height: 22px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f27b9c,
+            #c92e5b
+        );
+
+    opacity: .65;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    animation:
+        caer linear infinite;
+
+}
+
+
+@keyframes caer {
+
+    0% {
+
+        transform:
+            translateY(-40px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: .8;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(50vh)
+            translateX(70px)
+            rotate(180deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            translateX(-80px)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   FLORES
+===================================================== */
+
+.flores {
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 180px;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+}
+
+
+/* =====================================================
+   ROSA
+===================================================== */
+
+.rosa {
+
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #731330,
+            #b82251 25%,
+            #d9476e 50%,
+            #ef7897 75%,
+            #bb2753
+        );
+
+    box-shadow:
+        inset 7px 5px 12px rgba(255,255,255,.25),
+        0 7px 18px rgba(80,20,40,.2);
+
+}
+
+
+.rosa::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    top: 13px;
+    left: 13px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #75132f,
+            #c32c59 55%,
+            #e96788
+        );
+
+}
+
+
+.rosa::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    top: 26px;
+    left: 26px;
+
+    border-radius: 50%;
+
+    background: #74132f;
+
+}
+
+
+/* =====================================================
+   TULIPÁN
+===================================================== */
+
+.tulipan {
+
+    position: absolute;
+
+    width: 52px;
+    height: 70px;
+
+    border-radius:
+        55% 55% 45% 45%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c71e4e,
+            #ed6283,
+            #b71847
+        );
+
+    box-shadow:
+        inset 5px 5px 10px rgba(255,255,255,.25);
+
+}
+
+
+/* =====================================================
+   TALLOS
+===================================================== */
+
+.tallo {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 5px;
+    height: 120px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to right,
+            #315d36,
+            #6d9860
+        );
+
+}
+
+
+/* =====================================================
+   FLORES IZQUIERDA
+===================================================== */
+
+.flores-izquierda {
+
+    position: absolute;
+
+    left: 20px;
+    bottom: 0;
+
+    width: 180px;
+    height: 170px;
+
+}
+
+
+.flores-izquierda .rosa {
+
+    left: 60px;
+    bottom: 90px;
+
+}
+
+
+.flores-izquierda .tulipan {
+
+    left: 5px;
+    bottom: 60px;
+
+    transform: rotate(-8deg);
+
+}
+
+
+.flores-izquierda .tallo1 {
+
+    left: 95px;
+
+    transform: rotate(-8deg);
+
+}
+
+
+.flores-izquierda .tallo2 {
+
+    left: 35px;
+
+    height: 105px;
+
+    transform: rotate(-5deg);
+
+}
+
+
+/* =====================================================
+   FLORES DERECHA
+===================================================== */
+
+.flores-derecha {
+
+    position: absolute;
+
+    right: 20px;
+    bottom: 0;
+
+    width: 180px;
+    height: 170px;
+
+}
+
+
+.flores-derecha .rosa {
+
+    right: 55px;
+    bottom: 85px;
+
+}
+
+
+.flores-derecha .tulipan {
+
+    right: 5px;
+    bottom: 55px;
+
+    transform: rotate(8deg);
+
+}
+
+
+.flores-derecha .tallo1 {
+
+    right: 90px;
+
+    transform: rotate(8deg);
+
+}
+
+
+.flores-derecha .tallo2 {
+
+    right: 35px;
+
+    height: 105px;
+
+}
+
+
+.boton {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 40px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #d6336c,
+        #f06a9b
+    );
+
+    border: 1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 5px 20px rgba(165,31,77,.35);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 8px 30px rgba(165,31,77,.55);
+
+    background: linear-gradient(
+        135deg,
+        #f06a9b,
+        #d6336c
+    );
+}
+
+.boton:active {
+    transform: scale(.96);
+}
+
+}
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media(max-width:600px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+    .carta {
+
+        padding: 35px 25px;
+
+        max-height: 75vh;
+
+    }
+
+    p {
+
+        font-size: 17px;
+
+    }
+
+    .flores {
+
+        transform: scale(.65);
+
+        transform-origin:
+            bottom center;
+
+    }
+
+    .boton {
+        margin-top: 25px;
+        padding: 13px 32px;
+        font-size: 18px;
+    }
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     VIDEO DE FONDO
+===================================================== -->
+
+<video
+    autoplay
+    muted
+    loop
+    playsinline
+    id="video-fondo">
+
+    <source src="2026-08-24 13-30-22.mp4" type="video/mp4">
+
+    Tu navegador no soporta videos.
+
+</video>
+
+
+<!-- =====================================================
+     CORAZONES
+===================================================== -->
+
+<div class="corazon">❤️</div>
+<div class="corazon">💕</div>
+<div class="corazon">💗</div>
+<div class="corazon">💖</div>
+<div class="corazon">💞</div>
+<div class="corazon">❤️</div>
+
+
+<!-- =====================================================
+     PÉTALOS
+===================================================== -->
+
+<div class="petalo"
+     style="left:8%; animation-duration:9s;">
+</div>
+
+<div class="petalo"
+     style="left:22%; animation-duration:12s; animation-delay:2s;">
+</div>
+
+<div class="petalo"
+     style="left:38%; animation-duration:10s; animation-delay:4s;">
+</div>
+
+<div class="petalo"
+     style="left:55%; animation-duration:13s; animation-delay:1s;">
+</div>
+
+<div class="petalo"
+     style="left:72%; animation-duration:11s; animation-delay:3s;">
+</div>
+
+<div class="petalo"
+     style="left:90%; animation-duration:14s; animation-delay:5s;">
+</div>
+
+
+<!-- =====================================================
+     FLORES
+===================================================== -->
+
+<div class="flores">
+
+    <div class="flores-izquierda">
+
+        <div class="tallo tallo1"></div>
+
+        <div class="tallo tallo2"></div>
+
+        <div class="rosa"></div>
+
+        <div class="tulipan"></div>
+
+    </div>
+
+
+    <div class="flores-derecha">
+
+        <div class="tallo tallo1"></div>
+
+        <div class="tallo tallo2"></div>
+
+        <div class="rosa"></div>
+
+        <div class="tulipan"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     CARTA
+===================================================== -->
+
+<div class="carta">
+
+    <h1>
+        Para ti ❤️
+    </h1>
+
+
+    <p>
+        Hoy quiero desearte un muy
+        <strong>feliz cumpleaños.</strong>
+    </p>
+
+
+    <p>
+        Hoy quiero celebrar algo mucho más importante
+        que una fecha en el calendario: quiero celebrar
+        que existes, que llegaste a este mundo y que,
+        de alguna manera, nuestros caminos tuvieron
+        la oportunidad de encontrarse.
+    </p>
+
+
+    <p>
+        No sé si existen las casualidades o si algunas
+        personas simplemente están destinadas a aparecer
+        en determinados momentos de nuestra vida, pero
+        sí sé que me siento muy afortunado de poder
+        compartir contigo momentos, conversaciones,
+        sonrisas y recuerdos que significan muchísimo
+        para mí.
+    </p>
+
+
+    <p>
+        En tu cumpleaños quiero desearte todo aquello
+        que tu corazón pueda imaginar. Quiero que
+        cumplas cada uno de tus sueños, que alcances
+        cada una de tus metas y que nunca dejes de
+        luchar por aquello que realmente quieres.
+    </p>
+
+
+    <p>
+        Quiero verte sonreír, quiero verte crecer,
+        quiero verte alcanzar tus sueños y quiero
+        que cada año que pase tengas más razones
+        para sentirte orgullosa de la persona en la
+        que te estás convirtiendo.
+    </p>
+
+
+    <p>
+        Si alguna vez tienes un día malo, recuerda
+        que también habrá días buenos esperando por ti.
+        Si alguna vez sientes que no puedes, recuerda
+        todo lo que ya has superado. Y si alguna vez
+        dudas de lo especial que eres, recuerda que
+        hay alguien que ve en ti muchísimo más de lo
+        que quizá tú misma puedas ver.
+    </p>
+
+
+    <p>
+        Espero que este cumpleaños sea solamente
+        el comienzo de un año maravilloso. Un año
+        lleno de aventuras, risas, abrazos, viajes,
+        sueños, sorpresas y momentos que podamos
+        guardar para siempre en nuestros corazones.
+    </p>
+
+
+    <p>
+        Gracias por ser tú. Gracias por cada sonrisa,
+        por cada palabra, por cada momento y por
+        cada recuerdo.
+    </p>
+
+
+    <p>
+        Feliz cumpleaños, mi amor. ❤️🎂
+    </p>
+
+
+    <p>
+        Que la vida te conceda muchísimos años más
+        para seguir soñando, creciendo, aprendiendo
+        y siendo esa persona maravillosa que eres.
+    </p>
+
+
+    <p>
+        Y si tengo la suerte de estar a tu lado en
+        muchos de esos años, créeme que será uno de
+        los regalos más bonitos que la vida pueda darme.
+    </p>
+
+
+    <p>
+        Te quiero muchísimo. ❤️ Hoy celebramos tu vida
+        y yo celebro tenerte en la mía. ❤️🌹
+    </p>
+
+
+    <div class="firma">
+
+        Con mucho cariño Darturo ❤️
+
+    </div>
+
+    <a href="carta_2.html" class="boton">
+        Continuar ❤️
+    </a>
+
+</div>
+
+<!-- =====================================================
+     MÚSICA
+===================================================== -->
+
+<audio id="musica" preload="auto" loop>
+
+    <source
+        src="Feliz Cumpleaños (Instrumental).wav"type="audio/wav">
+
+</audio>
+
+
+<script>
+
+const musica = document.getElementById("musica");
+
+
+/*
+    VOLUMEN:
+
+    1.00 = 100%
+    0.75 = 75%
+    0.50 = 50%
+    0.30 = 30%
+
+    0.30 equivale a reducir aproximadamente
+    un 70% del volumen original.
+*/
+
+musica.volume = 0.30;
+
+
+/*
+    Comprobar si venimos desde index.html
+*/
+
+if (
+    sessionStorage.getItem("reproducirMusica")
+    === "true"
+) {
+
+    musica.play().catch(function(error) {
+
+        console.log(
+            "El navegador requiere interacción para reproducir:",
+            error
+        );
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
